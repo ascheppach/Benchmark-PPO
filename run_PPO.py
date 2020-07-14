@@ -94,4 +94,5 @@ def run_PPO(configurations, curve_names, envs, env, num_steps, ppo_epochs, mini_
         plt.plot(x,plot_rewards[s], label = curve_names[s]) 
         #plt.plot(x,plot_rewards[s]) 
     plt.legend(loc="upper left")
+    plt.savefig("plot", dpi= 300)
     plt.show()
