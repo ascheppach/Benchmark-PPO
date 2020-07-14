@@ -42,8 +42,13 @@ configurations = configurations(gammas, clip_params, lr, hidden_size, tau)
 
 # define names of benchmark curves
 curve_names = "clip_0.1","clip_0.2", "clip_0.3","clip_0.4" 
-    
+
+
 # run benchmark
+
+# max_frames defines the number of steps, and modulo defines
+# after how much steps of training, we test episodes are run 
+# in this example, each time after 1000 number of steps were run, we policy is evaluated
 run_PPO(configurations, curve_names, envs, env, num_steps=20, ppo_epochs=4, mini_batch_size = 5, max_frames = 15000, modulo = 1000)
 
 
